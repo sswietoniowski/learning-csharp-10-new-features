@@ -1,2 +1,2 @@
-﻿// thanks to the global using we can write something like that :-)
-WriteLine("Hello thanks to the global using coming from the project settings");
+﻿// used "file scoped namespace"
+WriteLine(typeof(MySpecialNamespaceDefinedForTheWholeFile.Person).FullName);
