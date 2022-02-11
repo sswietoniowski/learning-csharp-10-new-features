@@ -1,3 +1,4 @@
 ﻿namespace Csharp10.NewFeatures;
 
-internal record Rectangle(int Height, int Width, Rectangle? rectangle = null);
+// now records can be based on struct not only classes
+internal record struct Rectangle(int Height, int Width);
