@@ -1,14 +1,14 @@
-﻿// there are many improvements conserning lambdas
+﻿// extended property patterns
 
-// this is how we could do that in the old days
+using Csharp10.NewFeatures;
 
-Func<string> helloWorld = () => "Hello World!";
+var rectangleInside = new Rectangle(0, 0);
+var rectangleOutside = new Rectangle(100, 100, rectangleInside);
 
-// now we could use type inference
-
-var newHelloWorld = () => "New Hello World!";
-
-WriteLine(helloWorld());
-WriteLine(newHelloWorld());
-
-var text = string? () => null; // in the past you could not do that (after all null can be anything)
+// old syntax
+//if (rectangleOutside is { rectangle: { Height: > 100} })
+// new syntax
+if (rectangleOutside is { rectangle.Height: > 100 })
+{
+    // do something with that...
+}
